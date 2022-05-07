@@ -48,7 +48,7 @@ jobs:
                   password: ${{ secrets.HOST_PASSWORD }}
                   # 服务器ssh端口
                   port:  ${{ secrets.HOST_PORT }}
-                  script: |
+                  script: |-
                     cd /root/go/src/second-website
                     tar -xzvf second-website.tgz
                     sh deploy.sh
