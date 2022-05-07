@@ -15,20 +15,7 @@ jobs:
               uses: actions/checkout@master
             - name: 打包构建
               run: tar --warning=no-file-changed -zcvf second-website.tgz .
-            - name: 删除阿里云已经部署的项目
-              uses: appleboy/ssh-deploy@master
-              with:
-                  # 服务器ip
-                  host: ${{ secrets.HOST }}
-                  # 服务器登录用户名
-                  username: ${{ secrets.HOST_USERNAME }}
-                  # 服务器登录密码
-                  password: ${{ secrets.HOST_PASSWORD }}
-                  # 服务器ssh端口
-                  port:  ${{ secrets.HOST_PORT }}
-                  script: |
-                    cd /root/go/src/second-website
-                    rm -rf ./*    
+           
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
               with:
@@ -48,7 +35,7 @@ jobs:
                   password: ${{ secrets.HOST_PASSWORD }}
                   # 服务器ssh端口
                   port:  ${{ secrets.HOST_PORT }}
-                  script: |-
+                  script: |
                     cd /root/go/src/second-website
                     tar -xzvf second-website.tgz
                     sh deploy.sh
