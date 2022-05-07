@@ -24,7 +24,6 @@ jobs:
                   username: ${{ secrets.HOST_USERNAME }}
                   # 服务器登录密码
                   password: ${{ secrets.HOST_PASSWORD }}
-                  key: ${{ secrets.HOST_SSH_KEY }}
                   # 服务器ssh端口
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
@@ -47,7 +46,6 @@ jobs:
                   username: ${{ secrets.HOST_USERNAME }}
                   # 服务器登录密码
                   password: ${{ secrets.HOST_PASSWORD }}
-                  key: ${{ secrets.HOST_SSH_KEY }}
                   # 服务器ssh端口
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
