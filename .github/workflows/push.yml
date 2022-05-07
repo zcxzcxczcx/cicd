@@ -14,7 +14,7 @@ jobs:
               # 使用action库  actions/checkout获取源码
               uses: actions/checkout@master
             - name: 压缩项目
-              run: tar  -zcvf second-website.tgz .
+              run:  zip -r  second-websit.zip .
             - name: 删除阿里云已经部署的项目
               uses: appleboy/ssh-action@master
               with:
@@ -33,8 +33,8 @@ jobs:
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
               with:
-                local: second-website.tgz
-                remote: /root/go/src/second-website/second-website.tgz
+                local: second-websit.zip
+                remote: /root/go/src/second-website/second-websit.zip
                 host: ${{ secrets.HOST }}
                 username: ${{ secrets.HOST_USERNAME }}
                 password: ${{ secrets.HOST_PASSWORD }}
@@ -52,7 +52,7 @@ jobs:
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
                     cd /root/go/src/second-website
-                    tar -xzvf second-website.tgz
+                    unzip second-websit.zip
                     sh deploy.sh
 
             
