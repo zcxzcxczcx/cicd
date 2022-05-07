@@ -14,14 +14,14 @@ jobs:
               # 使用action库  actions/checkout获取源码
               uses: actions/checkout@master
             # 第二步：打包构建
-            - run: tar -zcvf second-webbbsite.tgz .
+            - run: tar -zcvf second-website.tgz .
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
               with:
-                local: second-webbbsite.tgz
+                local: second-website.tgz
                 remote: /root/go/src
-                host: ${{ secrets.SERVER_HOST }}
-                username: ${{ secrets.SERVER_USER }}
-                password: ${{ secrets.SERVER_PASS }}
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.HOST_USERNAME }}
+                password: ${{ secrets.HOST_PASSWORD }}
             
                   
