@@ -18,7 +18,7 @@ jobs:
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
               with:
-                local: second-webbbsite.tg
+                local: second-webbbsite.tgz
                 remote: /root/go/src
                 host: ${{ secrets.SERVER_HOST }}
                 username: ${{ secrets.SERVER_USER }}
