@@ -50,6 +50,7 @@ jobs:
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
                     cd /root/go/src/second-website
+                    chmod +x deploy.sh
                     unzip second-websit.zip
                     sh deploy.sh
 
