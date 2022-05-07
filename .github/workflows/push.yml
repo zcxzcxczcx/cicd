@@ -14,7 +14,7 @@ jobs:
               # 使用action库  actions/checkout获取源码
               uses: actions/checkout@master
             - name: 打包构建
-              run: tar --warning=no-file-changed -zcvf second-website.tgz .
+              run: tar -zcvf second-website.tgz .
             - name: 删除阿里云已经部署的项目
               uses: appleboy/ssh-action@master
               with:
