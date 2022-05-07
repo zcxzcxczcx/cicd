@@ -13,15 +13,16 @@ jobs:
             - name: 迁出代码
               # 使用action库  actions/checkout获取源码
               uses: actions/checkout@master
-            # 第二步：打包构建
-            - run: tar --warning=no-file-changed -zcvf second-website.tgz .
+            - name: 打包构建
+              run: tar --warning=no-file-changed -zcvf second-website.tgz .
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
               with:
                 local: second-website.tgz
-                remote: /root/go/src/second-website.tgz
+                remote: /root/go/src/second-website/second-website.tgz
                 host: ${{ secrets.HOST }}
                 username: ${{ secrets.HOST_USERNAME }}
                 password: ${{ secrets.HOST_PASSWORD }}
+            
             
                   
