@@ -18,4 +18,4 @@ echo "构建最新镜像"
 docker build -t $docker_image_username .
 echo "启动服务"
 # 有需要添加的环境变量随时添加
-docker run -p $port:$port -d $docker_image_username
+docker run --name $app_name -p $port:$port -d $docker_image_username
