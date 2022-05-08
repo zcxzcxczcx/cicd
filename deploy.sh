@@ -1,8 +1,8 @@
 #! bin/bash
 # 外部传给内部的变量脚本
-app_name="second-website"
+app_name="cicd"
 port="8000"
-docker_image_username="zcxzcxczcx/second-website"
+docker_image_username="zcxzcxczcx/cdcd"
 
 echo "对容器存活进行判断"
 if test -n "$(docker ps -a |grep $app_name)" ; then

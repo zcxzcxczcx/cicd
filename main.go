@@ -7,7 +7,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.GET("/hello", func(c *gin.Context) {
-		c.JSON(200, gin.H{"hello": "3"})
+		c.JSON(200, gin.H{"hello": "cicd"})
 	})
 	r.Run(":8000")
 }

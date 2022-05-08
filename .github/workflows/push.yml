@@ -14,7 +14,7 @@ jobs:
               # 使用action库  actions/checkout获取源码
               uses: actions/checkout@master
             - name: 压缩项目
-              run:  zip -r  second-websit.zip .
+              run:  zip -r  cicd.zip .
             - name: 删除阿里云已经部署的项目
               uses: appleboy/ssh-action@master
               with:
@@ -27,7 +27,7 @@ jobs:
                   # 服务器ssh端口
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
-                    cd /root/go/src/second-website
+                    cd /root/go/src/cicd
                     rm -rf ./*    
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
@@ -49,9 +49,9 @@ jobs:
                   # 服务器ssh端口
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
-                    cd /root/go/src/second-website
+                    cd /root/go/src/cicd
                     chmod +x deploy.sh
-                    unzip second-websit.zip
+                    unzip cocd.zip
                     sh deploy.sh
 
             
