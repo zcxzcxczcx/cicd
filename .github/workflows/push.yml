@@ -32,7 +32,7 @@ jobs:
             - name: 将项目上传到阿里云服务器
               uses: garygrossgarten/github-action-scp@release
               with:
-                local: second-websit.zip
+                local: cicd.zip
                 remote: /root/go/src/second-website/second-websit.zip
                 host: ${{ secrets.HOST }}
                 username: ${{ secrets.HOST_USERNAME }}
