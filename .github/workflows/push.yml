@@ -51,7 +51,7 @@ jobs:
                   script: |
                     cd /root/go/src/cicd
                     chmod +x deploy.sh
-                    unzip cocd.zip
+                    unzip cicd.zip
                     sh deploy.sh
 
             
