@@ -50,8 +50,8 @@ jobs:
                   port:  ${{ secrets.HOST_PORT }}
                   script: |
                     cd /root/go/src/cicd
-                    chmod +x deploy.sh
                     unzip cicd.zip
+                    chmod +x deploy.sh
                     sh deploy.sh
 
             
